@@ -32,7 +32,7 @@ class PersonalWorkbench extends React.Component{
               <Menu.Item key="18">我已阅的文件</Menu.Item>
             </SubMenu>
             <SubMenu key="sub13" title={<span>草拟文件</span>}>
-              <Menu.Item key="19"><a href="/PersonalWorkbench/InstitutePost">学院发文</a></Menu.Item>
+              <Menu.Item key="19"><a href="/#/PersonalWorkbench/InstitutePost">学院发文</a></Menu.Item>
             </SubMenu>
             <SubMenu key="sub14" title={<span>工作设置</span>}>
               <Menu.Item key="110">个性配置</Menu.Item>
