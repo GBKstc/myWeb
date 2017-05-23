@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Link } from 'dva/router';
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 import { connect } from 'dva';
@@ -22,7 +23,8 @@ function IndexPage(props) {
           <Menu.Item key="1"><a href="/#/PersonalWorkbench">个人工作台</a></Menu.Item>
           <Menu.Item key="2"><a href="/#/FileMangement">公文管理</a></Menu.Item>
           <Menu.Item key="3"><a href="/#/BussinessOffice">业务办公</a></Menu.Item>
-          <Menu.Item key="4">公共信息</Menu.Item>
+          <Menu.Item key="4"><a href="/#/NoticeInfo">公共信息</a></Menu.Item>
+          <Menu.Item key="5"><a href="/#/Extend">扩展</a></Menu.Item>
         </Menu>
       </Header>
       {props.children}
