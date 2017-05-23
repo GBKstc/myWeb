@@ -22,6 +22,7 @@ function RouterConfig({ history }) {
 
       </Route>
       <Route path="/" component={IndexPage} >
+        <IndexRedirect to="/Login" />
         <IndexRoute component={PersonalWorkbench}/>
         <Route path="/PersonalWorkbench" component={PersonalWorkbench}>
           <Route path="/PersonalWorkbench/InstitutePost" component={InstitutePost}/>
