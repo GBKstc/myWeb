@@ -18,12 +18,12 @@ import Extend from "./routes/extend/Extend";
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
+      <IndexRoute component={PersonalWorkbench}/>
       <Route path="/Login" component={LoginContainer}>
 
       </Route>
       <Route path="/" component={IndexPage} >
         <IndexRedirect to="/Login" />
-        <IndexRoute component={PersonalWorkbench}/>
         <Route path="/PersonalWorkbench" component={PersonalWorkbench}>
           <Route path="/PersonalWorkbench/InstitutePost" component={InstitutePost}/>
         </Route>
