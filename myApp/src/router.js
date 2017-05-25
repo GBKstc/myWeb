@@ -12,8 +12,12 @@ import FileMangement from './routes/file_management/FileMangement';
 import BussinessOffice from './routes/bussiness_office/BussinessOffice';
 
 import NoticeInfo from "./routes/notice_info/NoticeInfo";
+import OutRecord from './routes/notice_info/OutRecord';
 
 import Extend from "./routes/extend/Extend";
+import AddressList from "./routes/extend/AddressList";
+import Minutes from "./routes/extend/Minutes";
+import ClassSchedule from "./routes/extend/ClassSchedule";
 
 function RouterConfig({ history }) {
   return (
@@ -29,8 +33,14 @@ function RouterConfig({ history }) {
         </Route>
         <Route path="/FileMangement" component={FileMangement}/>
         <Route path="/BussinessOffice" component={BussinessOffice}/>
-        <Route path="/NoticeInfo" component={NoticeInfo}/>
-        <Route path="/Extend" component={Extend}/>
+        <Route path="/NoticeInfo" component={NoticeInfo}>
+          <Route path="/NoticeInfo/OutRecord" component={OutRecord}></Route>
+        </Route>
+        <Route path="/Extend" component={Extend}>
+          <Route path="/Extend/AddressList" component={AddressList}></Route>
+          <Route path="/Extend/Minutes" component={Minutes}></Route>
+          <Route path="/Extend/ClassSchedule" component={ClassSchedule}></Route>
+        </Route>
       </Route>
     </Router>
   );

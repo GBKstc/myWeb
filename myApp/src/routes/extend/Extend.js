@@ -22,14 +22,17 @@ class Extend extends React.Component{
             style={{ height: '100%' }}
           >
             <SubMenu key="sub51" title={<span>我的课表</span>}>
-              <Menu.Item key="51">我的课表</Menu.Item>
+              <Menu.Item key="51"><a href="/#/Extend/ClassSchedule">我的课表</a></Menu.Item>
               {/*<Menu.Item key="52">待阅文件</Menu.Item>*/}
             </SubMenu>
-            <SubMenu key="sub52" title={<span>会议视频</span>}>
-              <Menu.Item key="55">通讯录</Menu.Item>
+            <SubMenu key="sub52" title={<span>视频通讯</span>}>
+              <Menu.Item key="55"><a href="/#/Extend/AddressList">通讯录</a></Menu.Item>
               {/*<Menu.Item key="56">我创建的文件</Menu.Item>*/}
               {/*<Menu.Item key="57">我已办的文件</Menu.Item>*/}
               {/*<Menu.Item key="58">我已阅的文件</Menu.Item>*/}
+            </SubMenu>
+            <SubMenu key="sub53" title={<span>会议记录</span>}>
+              <Menu.Item key="56"><a href="/#/Extend/Minutes">会议记录表</a></Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>

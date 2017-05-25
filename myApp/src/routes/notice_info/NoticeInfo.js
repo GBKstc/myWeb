@@ -22,9 +22,9 @@ class NoticeInfo extends React.Component{
             style={{ height: '100%' }}
           >
             <SubMenu key="sub41" title={<span>公共信息</span>}>
-              <Menu.Item key="41">人员外出</Menu.Item>
+              <Menu.Item key="41"><a href="/#/NoticeInfo/OutRecord">人员外出</a></Menu.Item>
               <Menu.Item key="42">内部论坛</Menu.Item>
-              <Menu.Item key="43">通讯录</Menu.Item>
+              {/*<Menu.Item key="43">通讯录</Menu.Item>*/}
               <Menu.Item key="44">组织结构</Menu.Item>
               <Menu.Item key="45">IE浏览器设置</Menu.Item>
               <Menu.Item key="46">OA系统操作手册</Menu.Item>
@@ -37,9 +37,10 @@ class NoticeInfo extends React.Component{
               {/*<Menu.Item key="47">我已办的文件</Menu.Item>*/}
               {/*<Menu.Item key="48">我已阅的文件</Menu.Item>*/}
             </SubMenu>
-            {/*<SubMenu key="sub43" title={<span>草拟文件</span>}>*/}
-              {/*<Menu.Item key="49"><a href="/#/PersonalWorkbench/InstitutePost">学院发文</a></Menu.Item>*/}
-            {/*</SubMenu>*/}
+            <SubMenu key="sub43" title={<span>邮箱</span>}>
+              <Menu.Item key="48">发送邮件</Menu.Item>
+              <Menu.Item key="49">已发邮件</Menu.Item>
+            </SubMenu>
             {/*<SubMenu key="sub44" title={<span>工作设置</span>}>*/}
               {/*<Menu.Item key="410">个性配置</Menu.Item>*/}
               {/*<Menu.Item key="411">修改密码</Menu.Item>*/}
