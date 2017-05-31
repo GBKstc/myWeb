@@ -12,6 +12,7 @@ class PersonalWorkbench extends React.Component{
   }
 
   render(){
+
     return (
       <Layout>
         <Sider width={200} style={{ background: '#fff' }}>
@@ -56,6 +57,6 @@ class PersonalWorkbench extends React.Component{
 }
 
 // export default Products;
-export default connect(({ personalWorkbench }) => ({
-  personalWorkbench,
+export default connect(({ example }) => ({
+  example,
 }))(PersonalWorkbench);

@@ -64,6 +64,6 @@ class Minutes extends React.Component{
   }
 }
 
-export default connect(({ minutes }) => ({
-  minutes,
+export default connect(({ example }) => ({
+  example,
 }))(Minutes);

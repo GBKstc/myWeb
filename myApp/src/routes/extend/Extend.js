@@ -34,6 +34,12 @@ class Extend extends React.Component{
             <SubMenu key="sub53" title={<span>会议记录</span>}>
               <Menu.Item key="56"><a href="/#/Extend/Minutes">会议记录表</a></Menu.Item>
             </SubMenu>
+            <SubMenu key="sub54" title={<span>系统设置</span>}>
+              <Menu.Item key="57" ><a href="/#/Extend/StyleEdit">样式和语言设置</a></Menu.Item>
+            </SubMenu>
+            {/*<SubMenu key="sub53" title={<span>会议记录</span>}>*/}
+              {/*<Menu.Item key="56"><a href="/#/Extend/Minutes">会议记录表</a></Menu.Item>*/}
+            {/*</SubMenu>*/}
           </Menu>
         </Sider>
         <Layout style={{ padding: '0 24px 24px' }}>
@@ -49,6 +55,6 @@ class Extend extends React.Component{
 }
 
 // export default Products;
-export default connect(({ extend }) => ({
-  extend,
+export default connect(({ example }) => ({
+  example,
 }))(Extend);

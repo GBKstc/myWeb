@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2017/5/25.
+ * Created by Administrator on 2017/5/28.
  */
 import React from 'react';
 import { connect } from 'dva';
@@ -9,37 +9,37 @@ const dataSource = [
   {
     name: 'Krisy',
     date: '2017-5-25',
-    matter: "Meeting",
+    title: "Meeting",
   },{
     name: 'Allen',
     date: '2017-5-22',
-    matter: "Be invited to judge by NanHua School",
+    title: "Be invited to judge by NanHua School",
   },{
     name: 'Kyle',
     date: '2017-5-20',
-    matter: "Be invited to judge by LingNan School",
+    title: "Be invited to judge by LingNan School",
   }
 ];
 const columns = [
   {
+    title: '收件人',
+    dataIndex: 'name',
+    key: 'name',
+    width: '15%',
+  }, {
+    title: '主题',
+    dataIndex: 'title',
+    key: 'title',
+    width: '75%',
+  }, {
     title: '时间',
     dataIndex: 'date',
     key: 'date',
-    width: '30%',
-  }, {
-    title: '姓名',
-    dataIndex: 'name',
-    key: 'name',
-    width: '30%',
-  }, {
-    title: '事项',
-    dataIndex: 'matter',
-    key: 'matter',
-    width: '40%',
+    width: '10%',
   },
 ];
 
-class OutRecord extends React.Component{
+class HaveSentMail extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -50,7 +50,7 @@ class OutRecord extends React.Component{
 
     return(
       <Panel
-        title="外出记录"
+        title="已发邮件"
       >
         <Table
           columns = {columns}
@@ -73,4 +73,4 @@ class OutRecord extends React.Component{
 // export default Products;
 export default connect(({ example }) => ({
   example,
-}))(OutRecord);
+}))(HaveSentMail);

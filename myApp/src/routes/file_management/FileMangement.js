@@ -60,6 +60,6 @@ class FileMangement extends React.Component{
 }
 
 // export default FileMangement;
-export default connect(({ fileMangement }) => ({
-  fileMangement,
+export default connect(({ example }) => ({
+  example,
 }))(FileMangement);

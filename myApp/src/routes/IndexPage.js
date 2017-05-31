@@ -1,38 +1,47 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { Link } from 'dva/router';
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
 import { connect } from 'dva';
 import styles from './IndexPage.less';
+const { SubMenu } = Menu;
+const { Header, Content, Sider } = Layout;
 
-function IndexPage(props) {
+class IndexPage extends React.Component{
+  constructor(props){
+    super(props);
+  }
 
-  return (
-    <Layout>
-      <Header className="header">
-        <div className={styles.logo} >
-          <p className={styles.name}>李芊，您好!</p>
-        </div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={["1"]}
-          style={{ lineHeight: '64px' }}
-        >
-          <Menu.Item key="1"><a href="/#/PersonalWorkbench">个人工作台</a></Menu.Item>
-          <Menu.Item key="2"><a href="/#/FileMangement">公文管理</a></Menu.Item>
-          <Menu.Item key="3"><a href="/#/BussinessOffice">业务办公</a></Menu.Item>
-          <Menu.Item key="4"><a href="/#/NoticeInfo">公共信息</a></Menu.Item>
-          <Menu.Item key="5"><a href="/#/Extend">扩展</a></Menu.Item>
-        </Menu>
-      </Header>
-      {props.children}
-    </Layout>
-  );
+
+
+  render(){
+    console.log(this.props);
+
+    return (
+      <Layout>
+        <Header className="header">
+          <div className={styles.logo} >
+            <p className={styles.name}>李芊，您好!</p>
+          </div>
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={["1"]}
+            style={{ lineHeight: '64px' }}
+          >
+            <Menu.Item key="1"><Link href="/#/PersonalWorkbench">{this.props.example.language["personal_workbench"]}</Link></Menu.Item>
+            <Menu.Item key="2"><Link href="/#/FileMangement">公文管理</Link></Menu.Item>
+            <Menu.Item key="3"><Link href="/#/BussinessOffice">业务办公</Link></Menu.Item>
+            <Menu.Item key="4"><Link href="/#/NoticeInfo">公共信息</Link></Menu.Item>
+            <Menu.Item key="5"><Link href="/#/Extend">扩展</Link></Menu.Item>
+          </Menu>
+        </Header>
+        {this.props.children}
+      </Layout>
+    )
+  }
 }
 
-IndexPage.propTypes = {
-};
 
-export default connect()(IndexPage);
+export default connect(({ example }) => ({
+  example,
+}))(IndexPage);

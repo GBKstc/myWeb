@@ -93,6 +93,6 @@ class AddressList extends React.Component{
 // };
 
 // export default Products;
-export default connect(({ addressList }) => ({
-  addressList,
+export default connect(({ example }) => ({
+  example,
 }))(AddressList);

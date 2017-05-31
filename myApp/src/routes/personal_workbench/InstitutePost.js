@@ -111,6 +111,6 @@ const InstitutePost = ({ dispatch, products }) => {
 };
 
 // export default Products;
-export default connect(({ institutePost }) => ({
-  institutePost,
+export default connect(({ example }) => ({
+  example,
 }))(InstitutePost);

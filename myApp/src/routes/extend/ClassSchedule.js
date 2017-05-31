@@ -102,6 +102,6 @@ class ClassSchedule extends React.Component{
   }
 }
 
-export default connect(({ classSchedule }) => ({
-  classSchedule,
+export default connect(({ example }) => ({
+  example,
 }))(ClassSchedule);

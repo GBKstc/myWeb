@@ -58,6 +58,6 @@ class BussinessOffice extends React.Component{
 }
 
 // export default BussinessOffice;
-export default connect(({ bussinessOffice }) => ({
-  bussinessOffice,
+export default connect(({ example }) => ({
+  example,
 }))(BussinessOffice);

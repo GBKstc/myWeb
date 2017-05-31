@@ -38,8 +38,8 @@ class NoticeInfo extends React.Component{
               {/*<Menu.Item key="48">我已阅的文件</Menu.Item>*/}
             </SubMenu>
             <SubMenu key="sub43" title={<span>邮箱</span>}>
-              <Menu.Item key="48">发送邮件</Menu.Item>
-              <Menu.Item key="49">已发邮件</Menu.Item>
+              <Menu.Item key="48"><a href="/#/NoticeInfo/SendMail">发送邮件</a></Menu.Item>
+              <Menu.Item key="49"><a href="/#/NoticeInfo/HaveSentMail">已发邮件</a></Menu.Item>
             </SubMenu>
             {/*<SubMenu key="sub44" title={<span>工作设置</span>}>*/}
               {/*<Menu.Item key="410">个性配置</Menu.Item>*/}
@@ -63,6 +63,6 @@ class NoticeInfo extends React.Component{
 }
 
 // export default Products;
-export default connect(({ noticeInfo }) => ({
-  noticeInfo,
+export default connect(({ example }) => ({
+  example,
 }))(NoticeInfo);
