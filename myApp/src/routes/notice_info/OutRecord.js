@@ -50,7 +50,7 @@ class OutRecord extends React.Component{
 
     return(
       <Panel
-        title="外出记录"
+        title={this.props.example.language["OutRecord"]}
       >
         <Table
           columns = {columns}

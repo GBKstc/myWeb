@@ -93,22 +93,26 @@ const columns = [
     width: '40%',
   }
 ];
-const InstitutePost = ({ dispatch, products }) => {
-
-  return (
-    <Panel
-      title="个人工作台—待办文件"
-    >
-      <Table
-        columns = {columns}
-        dataSource = {dataSource}
-        size="small"
-        bordered
-        pagination={false}
-      />
-    </Panel>
-  );
-};
+class InstitutePost extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return (
+      <Panel
+        title={this.props.example.language["InstitutePost"]}
+      >
+        <Table
+          columns = {columns}
+          dataSource = {dataSource}
+          size="small"
+          bordered
+          pagination={false}
+        />
+      </Panel>
+    )
+  }
+}
 
 // export default Products;
 export default connect(({ example }) => ({

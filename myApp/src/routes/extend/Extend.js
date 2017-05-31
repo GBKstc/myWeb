@@ -20,22 +20,23 @@ class Extend extends React.Component{
             defaultSelectedKeys={['1']}
             //defaultOpenKeys={['sub1']}
             style={{ height: '100%' }}
+            theme={this.props.example.styleChange}
           >
-            <SubMenu key="sub51" title={<span>我的课表</span>}>
-              <Menu.Item key="51"><a href="/#/Extend/ClassSchedule">我的课表</a></Menu.Item>
+            <SubMenu key="sub51" title={<span>{this.props.example.language["MySchedule"]}</span>}>
+              <Menu.Item key="51"><a href="/#/Extend/ClassSchedule">{this.props.example.language["MySchedule"]}</a></Menu.Item>
               {/*<Menu.Item key="52">待阅文件</Menu.Item>*/}
             </SubMenu>
-            <SubMenu key="sub52" title={<span>视频通讯</span>}>
-              <Menu.Item key="55"><a href="/#/Extend/AddressList">通讯录</a></Menu.Item>
+            <SubMenu key="sub52" title={<span>{this.props.example.language["VideoCommunication"]}</span>}>
+              <Menu.Item key="55"><a href="/#/Extend/AddressList">{this.props.example.language["AddressList"]}</a></Menu.Item>
               {/*<Menu.Item key="56">我创建的文件</Menu.Item>*/}
               {/*<Menu.Item key="57">我已办的文件</Menu.Item>*/}
               {/*<Menu.Item key="58">我已阅的文件</Menu.Item>*/}
             </SubMenu>
-            <SubMenu key="sub53" title={<span>会议记录</span>}>
-              <Menu.Item key="56"><a href="/#/Extend/Minutes">会议记录表</a></Menu.Item>
+            <SubMenu key="sub53" title={<span>{this.props.example.language["Minutes"]}</span>}>
+              <Menu.Item key="56"><a href="/#/Extend/Minutes">{this.props.example.language["MinutesForm"]}</a></Menu.Item>
             </SubMenu>
-            <SubMenu key="sub54" title={<span>系统设置</span>}>
-              <Menu.Item key="57" ><a href="/#/Extend/StyleEdit">样式和语言设置</a></Menu.Item>
+            <SubMenu key="sub54" title={<span>{this.props.example.language["SystemSettings"]}</span>}>
+              <Menu.Item key="57" ><a href="/#/Extend/StyleEdit">{this.props.example.language["StyleAndLanguageSettings"]}</a></Menu.Item>
             </SubMenu>
             {/*<SubMenu key="sub53" title={<span>会议记录</span>}>*/}
               {/*<Menu.Item key="56"><a href="/#/Extend/Minutes">会议记录表</a></Menu.Item>*/}

@@ -20,30 +20,30 @@ class FileMangement extends React.Component{
             //defaultSelectedKeys={['1']}
             //defaultOpenKeys={['sub1']}
             style={{ height: '100%' }}
+            theme={this.props.example.styleChange}
           >
-            <SubMenu key="sub21" title={<span>发文管理</span>}>
-              <Menu.Item key="21">在办发文</Menu.Item>
-              <Menu.Item key="22">已办发文</Menu.Item>
+            <SubMenu key="sub21" title={<span>{this.props.example.language["PostManagement"]}</span>}>
+              <Menu.Item key="21">{this.props.example.language["WorkingPost"]}</Menu.Item>
+              <Menu.Item key="22">{this.props.example.language["HavePost"]}</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub22" title={<span>收文管理</span>}>
-              <Menu.Item key="23">在办收文</Menu.Item>
-              <Menu.Item key="24">已办收文</Menu.Item>
+            <SubMenu key="sub22" title={<span>{this.props.example.language["RecordManagement"]}</span>}>
+              <Menu.Item key="23">{this.props.example.language["WorkingAddressee"]}</Menu.Item>
+              <Menu.Item key="24">{this.props.example.language["HaveAddressee"]}</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub23" title={<span>请示报告</span>}>
-              <Menu.Item key="25"><a href="">在办请示报告</a></Menu.Item>
-              <Menu.Item key="26"><a href="">已办请示报告</a></Menu.Item>
+            <SubMenu key="sub23" title={<span>{this.props.example.language["RequestForInstruction"]}</span>}>
+              <Menu.Item key="25"><a href="">{this.props.example.language["ReportInTheOffice"]}</a></Menu.Item>
+              <Menu.Item key="26"><a href="">{this.props.example.language["AdvisoryReportMade"]}</a></Menu.Item>
             </SubMenu>
-            <SubMenu key="sub24" title={<span>部门发文</span>}>
-              <Menu.Item key="27">在办部门发文</Menu.Item>
-              <Menu.Item key="28">已办部门发文</Menu.Item>
+            <SubMenu key="sub24" title={<span>{this.props.example.language["DepartmentOfPost"]}</span>}>
+              <Menu.Item key="27">{this.props.example.language["OfficeOfOffice"]}</Menu.Item>
+              <Menu.Item key="28">{this.props.example.language["DepartmentHasIssuedPost"]}</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub25" title={<span>公文登记表</span>}>
-              <Menu.Item key="29">学院发文一览表</Menu.Item>
-              <Menu.Item key="210">学院收文一览表</Menu.Item>
-              <Menu.Item key="211">院内请示报告一览表</Menu.Item>
-              <Menu.Item key="212">部门发文一览表</Menu.Item>
+            <SubMenu key="sub25" title={<span>{this.props.example.language["OfficialDocumentForm"]}</span>}>
+              <Menu.Item key="210">{this.props.example.language["SchoolReadingList"]}</Menu.Item>
+              <Menu.Item key="211">{this.props.example.language["HospitalReadingList"]}</Menu.Item>
+              <Menu.Item key="212">{this.props.example.language["DepartmentReadingList"]}</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub26" title={<span>归档文件</span>}>
+            <SubMenu key="sub26" title={<span>{this.props.example.language["ArchivedFile"]}</span>}>
             </SubMenu>
           </Menu>
         </Sider>

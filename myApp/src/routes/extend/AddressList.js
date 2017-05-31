@@ -65,11 +65,11 @@ class AddressList extends React.Component{
     };
     return(
       <Panel
-        title="视频通讯"
+        title={this.props.example.language["VideoCommunication"]}
         foot={
           <Row type="flex" justify="end" style={{marginTop: 2}}>
-            <Button type="primary" disabled={!this.state.selectedRowKeys.length} style={{marginRight:8}}>确定</Button>
-            <Button type="primary" disabled={!this.state.selectedRowKeys.length} >取消</Button>
+            <Button type="primary" disabled={!this.state.selectedRowKeys.length} style={{marginRight:8}}>{this.props.example.language["Confirm"]}</Button>
+            <Button type="primary" disabled={!this.state.selectedRowKeys.length} >{this.props.example.language["Cancel"]}</Button>
           </Row>
         }
       >

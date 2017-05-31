@@ -15,13 +15,7 @@ const dataSource = [
     name: 'Kyle',
   }
 ];
-const columns = [
-  {
-    title: '联系人',
-    dataIndex: 'name',
-    key: 'name',
-  },
-];
+
 
 class SendMail extends React.Component{
   constructor(props){
@@ -66,45 +60,41 @@ class SendMail extends React.Component{
   }
 
   render(){
-    // const rowSelection = {
-    //   onChange: (selectedRowKeys, selectedRows) => {
-    //     //console.log(selectedRowKeys.length,selectedRows);
-    //     this.setState({
-    //       selectedRowKeys
-    //     })
-    //   },
-    //   getCheckboxProps: record => ({
-	//
-    //   }),
-    // };
+    const columns = [
+      {
+        title: this.props.example.language["Contacts"],
+        dataIndex: 'name',
+        key: 'name',
+      },
+    ];
     return(
       <Panel
-        title="发送邮件"
+        title={this.props.example.language["Sendmail"]}
         foot={
           <Row type="flex" justify="start" style={{marginTop: 2}}>
-            <Button type="primary"  style={{marginRight:8}}>发送</Button>
-            <Button type="primary"  style={{marginRight:8}}>定时发送</Button>
-            <Button type="primary"  style={{marginRight:8}}>存草稿</Button>
-            <Button type="primary"  onClick={this.onClick}>关闭</Button>
+            <Button type="primary"  style={{marginRight:8}}>{this.props.example.language["Send"]}</Button>
+            <Button type="primary"  style={{marginRight:8}}>{this.props.example.language["DelayedSend"]}</Button>
+            <Button type="primary"  style={{marginRight:8}}>{this.props.example.language["SaveDraft"]}</Button>
+            <Button type="primary"  onClick={this.onClick}>{this.props.example.language["Close"]}</Button>
           </Row>
         }
       >
         <Row type="flex" justify={"start"}>
           <Col span={20}>
             <Row type="flex" justify={"start"} style={{margin:8}}>
-              <Col span={2} style={{textAlign:"right",paddingRight:7}} >收件人:</Col>
+              <Col span={2} style={{textAlign:"right",paddingRight:7}} >{this.props.example.language["Recipients"]}:</Col>
               <Col span={22}>
                 <Input size="small" style={{"width":"100%"}} value={this.state.linkman_contacts} onChange={this.onChange}/>
               </Col>
             </Row>
             <Row type="flex" justify={"start"} style={{margin:8}}>
-              <Col span={2} style={{textAlign:"right",paddingRight:7}} >主题:</Col>
+              <Col span={2} style={{textAlign:"right",paddingRight:7}} >{this.props.example.language["Title"]}:</Col>
               <Col span={22}>
                 <Input size="small" style={{"width":"100%"}}/>
               </Col>
             </Row>
             <Row type="flex" justify={"start"} style={{margin:8}}>
-              <Col span={2} style={{textAlign:"right",paddingRight:7}} >正文:</Col>
+              <Col span={2} style={{textAlign:"right",paddingRight:7}} >{this.props.example.language["MainBody"]}:</Col>
               <Col span={22}>
                 <Input size="small" type="textarea" autosize={{ "minRows":8, "maxRows": 8 }} style={{"width":"100%"}}/>
               </Col>

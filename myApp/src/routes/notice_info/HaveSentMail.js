@@ -47,10 +47,27 @@ class HaveSentMail extends React.Component{
   }
 
   render(){
-
+    const columns = [
+      {
+        title: this.props.example.language["Recipients"],
+        dataIndex: 'name',
+        key: 'name',
+        width: '15%',
+      }, {
+        title: this.props.example.language["Title"],
+        dataIndex: 'title',
+        key: 'title',
+        width: '75%',
+      }, {
+        title: this.props.example.language["Date"],
+        dataIndex: 'date',
+        key: 'date',
+        width: '10%',
+      },
+    ];
     return(
       <Panel
-        title="已发邮件"
+        title={this.props.example.language["HaveSendmail"]}
       >
         <Table
           columns = {columns}

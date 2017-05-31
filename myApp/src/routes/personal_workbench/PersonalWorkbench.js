@@ -21,26 +21,27 @@ class PersonalWorkbench extends React.Component{
             defaultSelectedKeys={['1']}
             //defaultOpenKeys={['sub1']}
             style={{ height: '100%' }}
+            theme={this.props.example.styleChange}
           >
-            <SubMenu key="sub11" title={<span>待办工作</span>}>
-              <Menu.Item key="11">待办工作</Menu.Item>
-              <Menu.Item key="12">待阅文件</Menu.Item>
+            <SubMenu key="sub11" title={<span>{this.props.example.language["BacklogWork"]}</span>}>
+              <Menu.Item key="11">{this.props.example.language["BacklogWork"]}</Menu.Item>
+              <Menu.Item key="12">{this.props.example.language["ToBeRead"]}</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub12" title={<span>以办工作</span>}>
-              <Menu.Item key="15">我关注的文件</Menu.Item>
-              <Menu.Item key="16">我创建的文件</Menu.Item>
-              <Menu.Item key="17">我已办的文件</Menu.Item>
-              <Menu.Item key="18">我已阅的文件</Menu.Item>
+            <SubMenu key="sub12" title={<span>{this.props.example.language["FinishWork"]}</span>}>
+              <Menu.Item key="15">{this.props.example.language["AttentionFile"]}</Menu.Item>
+              <Menu.Item key="16">{this.props.example.language["FoundFile"]}</Menu.Item>
+              <Menu.Item key="17">{this.props.example.language["FinishFile"]}</Menu.Item>
+              <Menu.Item key="18">{this.props.example.language["ReadFile"]}</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub13" title={<span>草拟文件</span>}>
-              <Menu.Item key="19"><a href="/#/PersonalWorkbench/InstitutePost">学院发文</a></Menu.Item>
+            <SubMenu key="sub13" title={<span>{this.props.example.language["DraftFile"]}</span>}>
+              <Menu.Item key="19"><a href="/#/PersonalWorkbench/InstitutePost">{this.props.example.language["InstitutePost"]}</a></Menu.Item>
             </SubMenu>
-            <SubMenu key="sub14" title={<span>工作设置</span>}>
-              <Menu.Item key="110">个性配置</Menu.Item>
-              <Menu.Item key="111">修改密码</Menu.Item>
-              <Menu.Item key="112">外出设置</Menu.Item>
-              <Menu.Item key="113">常用意见</Menu.Item>
-              <Menu.Item key="114">常用动作</Menu.Item>
+            <SubMenu key="sub14" title={<span>{this.props.example.language["WorkSettings"]}</span>}>
+              <Menu.Item key="110">{this.props.example.language["PersonalityConfiguration"]}</Menu.Item>
+              <Menu.Item key="111">{this.props.example.language["ChangePassword"]}</Menu.Item>
+              <Menu.Item key="112">{this.props.example.language["SetOut"]}</Menu.Item>
+              <Menu.Item key="113">{this.props.example.language["CommonOpinions"]}</Menu.Item>
+              <Menu.Item key="114">{this.props.example.language["CommonActions"]}</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>

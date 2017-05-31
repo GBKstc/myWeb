@@ -14,13 +14,12 @@ class IndexPage extends React.Component{
 
 
   render(){
-    console.log(this.props);
 
     return (
       <Layout>
         <Header className="header">
           <div className={styles.logo} >
-            <p className={styles.name}>李芊，您好!</p>
+            <p className={styles.name}>{this.props.example.language["name"]}</p>
           </div>
           <Menu
             theme="dark"
@@ -28,11 +27,11 @@ class IndexPage extends React.Component{
             defaultSelectedKeys={["1"]}
             style={{ lineHeight: '64px' }}
           >
-            <Menu.Item key="1"><Link href="/#/PersonalWorkbench">{this.props.example.language["personal_workbench"]}</Link></Menu.Item>
-            <Menu.Item key="2"><Link href="/#/FileMangement">公文管理</Link></Menu.Item>
-            <Menu.Item key="3"><Link href="/#/BussinessOffice">业务办公</Link></Menu.Item>
-            <Menu.Item key="4"><Link href="/#/NoticeInfo">公共信息</Link></Menu.Item>
-            <Menu.Item key="5"><Link href="/#/Extend">扩展</Link></Menu.Item>
+            <Menu.Item key="1"><Link href="/#/PersonalWorkbench">{this.props.example.language["PersonalWorkbench"]}</Link></Menu.Item>
+            <Menu.Item key="2"><Link href="/#/FileMangement">{this.props.example.language["FileMangement"]}</Link></Menu.Item>
+            <Menu.Item key="3"><Link href="/#/BussinessOffice">{this.props.example.language["BussinessOffice"]}</Link></Menu.Item>
+            <Menu.Item key="4"><Link href="/#/NoticeInfo">{this.props.example.language["NoticeInfo"]}</Link></Menu.Item>
+            <Menu.Item key="5"><Link href="/#/Extend">{this.props.example.language["Extend"]}</Link></Menu.Item>
           </Menu>
         </Header>
         {this.props.children}

@@ -20,24 +20,7 @@ const dataSource = [
     opinion: " ",
   }
 ];
-const columns = [
-  {
-    title: '日期',
-    dataIndex: 'date',
-    key: 'date',
-    width: '30%',
-  }, {
-    title: '文件',
-    dataIndex: 'file',
-    key: 'file',
-    width: '30%',
-  }, {
-    title: '反馈/意见',
-    dataIndex: 'opinion',
-    key: 'opinion',
-    width: '40%',
-  },
-];
+
 
 class Minutes extends React.Component{
   constructor(props){
@@ -48,9 +31,27 @@ class Minutes extends React.Component{
   }
 
   render(){
+    const columns = [
+      {
+        title: this.props.example.language["Date"],
+        dataIndex: 'date',
+        key: 'date',
+        width: '30%',
+      }, {
+        title: this.props.example.language["File"],
+        dataIndex: 'file',
+        key: 'file',
+        width: '30%',
+      }, {
+        title: this.props.example.language["Opinion"],
+        dataIndex: 'opinion',
+        key: 'opinion',
+        width: '40%',
+      },
+    ];
     return(
       <Panel
-        title="会议记录"
+        title={this.props.example.language["MinutesForm"]}
       >
         <Table
           columns = {columns}
