@@ -98,6 +98,8 @@ const Chinese={
   "LanguageSettings":"语言设置",
   "StyleSettings":"样式设置",
   "File":"文件",
+  "Name":"姓名",
+  "Matter":"事项",
 };
 const English={
   "name":"Welcome，李芊!",
@@ -198,6 +200,8 @@ const English={
   "LanguageSettings":"LanguageSettings",
   "StyleSettings":"StyleSettings",
   "File":"File",
+  "Name":"Name",
+  "Matter":"Matter",
 };
 
 export default {
