@@ -13,7 +13,7 @@ class LoginContainer extends React.Component {
     super(props);
     this.state={
       isEem:false,
-      buttonText:"登陆"
+      buttonText:"Login"
     };
     this.goTo=undefined;
   }
@@ -38,7 +38,7 @@ class LoginContainer extends React.Component {
     return (
       <div className={styles.loginBg}>
         <div className={styles.loginWrapper}>
-          <h1 className={styles.loginHeader}>清远职业OA管理系统</h1>
+          <h1 className={styles.loginHeader}>Qingyuan Polytechnic</h1>
           <div className={styles.loginBody}>
             <Col span={10}>
               <img className={styles["left-image"]} src={logo}/>
@@ -53,19 +53,19 @@ class LoginContainer extends React.Component {
                     <img className={styles["ewm"]} src={ewm}/>
                     <FormItem className={styles["form-item"]}>
                       <Button style={{backgroundColor:"#404040",color:"#fff",border:"#404040 1px solid"}} type="primary" htmlType="submit" className={styles["login-form-button"]} onClick={this.onClick.bind(this,false)}>
-                        返回账号登陆
+                        Return account login
                       </Button>
                     </FormItem>
                   </Form>
                   :
                   <Form  className={styles["login-form"]}>
                     <FormItem className={styles["form-item"]}>
-                      <Input addonBefore={<Icon type="user" />} placeholder="用户名" />
+                      <Input addonBefore={<Icon type="user" />} placeholder="User" />
                     </FormItem>
                     <FormItem className={styles["form-item"]}>
-                      <Input addonBefore={<Icon type="lock" />} type="password" placeholder="密码" />
+                      <Input addonBefore={<Icon type="lock" />} type="password" placeholder="Password" />
                     </FormItem>
-                    <div onClick={this.onClick.bind(this,true)} className={styles["text-onclick"]}>点击切换扫码登陆</div>
+                    <div onClick={this.onClick.bind(this,true)} className={styles["text-onclick"]}>Toggle scan code login</div>
                     <FormItem className={styles["form-item"]}>
                       <Button style={{backgroundColor:"#404040",color:"#fff",border:"#404040 1px solid"}} type="primary" htmlType="submit" className={styles["login-form-button"]} >
                         <a href="/#/PersonalWorkbench">{this.state.buttonText}</a>
