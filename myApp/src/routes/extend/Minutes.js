@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { connect } from 'dva';
-import { Table, Row, Col, Button } from "antd";
+import { Table, Row, Col, Button, Modal } from "antd";
 import Panel from '../../components/Panel';
 const dataSource = [
   {
@@ -29,6 +29,7 @@ class Minutes extends React.Component{
       selectedRowKeys:[],
     }
   }
+
 
   render(){
     const columns = [

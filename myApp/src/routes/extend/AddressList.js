@@ -3,8 +3,9 @@
  */
 import React from 'react';
 import { connect } from 'dva';
-import { Table, Row, Col, Button } from "antd";
+import { Table, Row, Col, Button, Modal } from "antd";
 import Panel from '../../components/Panel';
+import styles from "./AddressList.less"
 const dataSource = [
   {
     name: 'Krisy',
@@ -48,15 +49,40 @@ class AddressList extends React.Component{
     super(props);
     this.state={
       selectedRowKeys:[],
+      selectedRows:[],
     }
+  }
+
+  isModalChange(value){
+    this.props.dispatch({
+      type: 'example/isModalChange',
+      payload:{
+        isModal:value,
+      }
+    });
+  }
+
+  videoImage(){
+    let {selectedRowKeys, selectedRows} = this.state;
+    let res = [];
+    for (let i in selectedRows){
+      res.push(
+        <Col span={8}>
+          <div  className={styles.Video} >
+            {selectedRows[i].name+this.props.example.language["Videoing"]}
+          </div>
+        </Col>
+        )
+    }
+    return res
   }
 
   render(){
     const rowSelection = {
       onChange: (selectedRowKeys, selectedRows) => {
-        console.log(selectedRowKeys.length,selectedRows);
         this.setState({
-          selectedRowKeys
+          selectedRowKeys,
+          selectedRows
         })
       },
       getCheckboxProps: record => ({
@@ -68,7 +94,7 @@ class AddressList extends React.Component{
         title={this.props.example.language["VideoCommunication"]}
         foot={
           <Row type="flex" justify="end" style={{marginTop: 2}}>
-            <Button type="primary" disabled={!this.state.selectedRowKeys.length} style={{marginRight:8}}>{this.props.example.language["Confirm"]}</Button>
+            <Button type="primary" onClick={this.isModalChange.bind(this,true)} disabled={!this.state.selectedRowKeys.length} style={{marginRight:8}}>{this.props.example.language["Confirm"]}</Button>
             <Button type="primary" disabled={!this.state.selectedRowKeys.length} >{this.props.example.language["Cancel"]}</Button>
           </Row>
         }
@@ -81,18 +107,21 @@ class AddressList extends React.Component{
           pagination={false}
           rowSelection={rowSelection}
         />
+        <Modal
+          title={this.props.example.language["Video"]+"..."}
+          visible={this.props.example.isModal}
+          onCancel={this.isModalChange.bind(this,false)}
+          footer={null}
+        >
+          <Row>
+            {this.videoImage()}
+          </Row>
+        </Modal>
       </Panel>
     )
   }
 }
-// const AddressList = ({ dispatch, products }) => {
-//
-//   return (
-//
-//   );
-// };
 
-// export default Products;
 export default connect(({ example }) => ({
   example,
 }))(AddressList);

@@ -20,24 +20,7 @@ const dataSource = [
     matter: "Be invited to judge by LingNan School",
   }
 ];
-const columns = [
-  {
-    title: '时间',
-    dataIndex: 'date',
-    key: 'date',
-    width: '30%',
-  }, {
-    title: '姓名',
-    dataIndex: 'name',
-    key: 'name',
-    width: '30%',
-  }, {
-    title: '事项',
-    dataIndex: 'matter',
-    key: 'matter',
-    width: '40%',
-  },
-];
+
 
 class OutRecord extends React.Component{
   constructor(props){
@@ -47,7 +30,24 @@ class OutRecord extends React.Component{
   }
 
   render(){
-
+    const columns = [
+      {
+        title: this.props.example.language["Date"],
+        dataIndex: 'date',
+        key: 'date',
+        width: '30%',
+      }, {
+        title: this.props.example.language["Name"],
+        dataIndex: 'name',
+        key: 'name',
+        width: '30%',
+      }, {
+        title: this.props.example.language["Matter"],
+        dataIndex: 'matter',
+        key: 'matter',
+        width: '40%',
+      },
+    ];
     return(
       <Panel
         title={this.props.example.language["OutRecord"]}

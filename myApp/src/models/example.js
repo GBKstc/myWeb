@@ -98,6 +98,10 @@ const Chinese={
   "LanguageSettings":"语言设置",
   "StyleSettings":"样式设置",
   "File":"文件",
+  "Name":"姓名",
+  "Matter":"事项",
+  "Video":"视频",
+  "Videoing":"的视频加载中...",
 };
 const English={
   "name":"Welcome，Krisy!",
@@ -198,6 +202,10 @@ const English={
   "LanguageSettings":"Language Settings",
   "StyleSettings":"Style Settings",
   "File":"File",
+  "Name":"Name",
+  "Matter":"Matter",
+  "Video":"Video",
+  "Videoing":"\'s video load...",
 };
 
 export default {
@@ -208,6 +216,7 @@ export default {
     language:English,
     languageType:"English",
     styleChange:"light",
+    isModal:false,
   },
 
   reducers: {
@@ -220,12 +229,17 @@ export default {
       return state;
     },
     styleChange(state,{payload}){
-      console.log("style");
+
       if (payload.style === "light"){
         state = {...state ,styleChange:"light"};
       }else {
         state = {...state ,styleChange:"dark"};
       }
+      return state;
+    },
+    isModalChange(state,{payload}){
+      state = {...state ,isModal:payload.isModal};
+      console.log(state);
       return state;
     }
   },
