@@ -24,6 +24,13 @@ const Chinese={
   "SetOut":"外出设置",
   "CommonOpinions":"常用意见",
   "CommonActions":"常用动作",
+  "FileType":"文件类型",
+  "Sender":"发送人",
+  "Sendtime":"发送时间",
+  "ProcessingLinks":"处理环节",
+  "EmergencyLevel":"紧急程度",
+  "FileTitle":"文件标题",
+
   //文件管理
   "PostManagement":"发文管理",
   "WorkingPost":"在办发文",
@@ -126,8 +133,19 @@ const English={
   "PersonalityConfiguration":"Personality Configuration",
   "ChangePassword":"Change Password",
   "SetOut":"SetOut",
+<<<<<<< HEAD
   "CommonOpinions":"Common Opinions",
   "CommonActions":"Common Actions",
+=======
+  "CommonOpinions":"CommonOpinions",
+  "CommonActions":"CommonActions",
+  "FileType":"File type",
+  "Sender":"Sender",
+  "Sendtime":"Send time",
+  "ProcessingLinks":"Processing links",
+  "EmergencyLevel":"Emergency level",
+  "FileTitle":"File title",
+>>>>>>> 98784bcb9bd201e87bdb12c63feef8cd9e5949b0
   //文件管理
   "PostManagement":"Post Management",
   "WorkingPost":"Working Post",

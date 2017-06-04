@@ -5,99 +5,68 @@ import React from 'react';
 import { connect } from 'dva';
 import { Table } from "antd";
 import Panel from '../../components/Panel';
-const dataSource = [
-  {
-    key: '1',
-    file_type: '学院收文',
-    sender: "李东",
-    send_time: '2016-07-14',
-    disposal_process: '转办',
-    emergency_degree: '平件',
-    file_header: '广东省教育厅关于公布学校安全教育微电影，微视频征集活动结果的通知',
-  },{
-    key: '2',
-    file_type: '部门收文',
-    sender: "李东",
-    send_time: '2016-07-14',
-    disposal_process: '办理',
-    emergency_degree: '急件',
-    file_header: '通知',
-  },{
-    key: '3',
-    file_type: '部门收文',
-    sender: "李东",
-    send_time: '2015-10-23',
-    disposal_process: '办理',
-    emergency_degree: '急件',
-    file_header: '关于做好2015年“广东特支计划教学名师”申报工作的通知',
-  },{
-    key: '4',
-    file_type: '部门收文',
-    sender: "李东",
-    send_time: '2015-7-22',
-    disposal_process: '办理',
-    emergency_degree: '平件',
-    file_header: '关于表彰我院参加省第九届大学生运动会获奖运动员和有贡献单位的通知',
-  },{
-    key: '5',
-    file_type: '部门收文',
-    sender: "李东",
-    send_time: '2015-03-14',
-    disposal_process: '办理',
-    emergency_degree: '急件',
-    file_header: '关于外语与经济贸易学院新办公室装修相关事宜的申请（续）',
-  },{
-    key: '6',
-    file_type: '部门收文',
-    sender: "李东",
-    send_time: '2015-01-01',
-    disposal_process: '办理',
-    emergency_degree: '急件',
-    file_header: '关于表彰李芊同学带领的王者荣耀“顶呱呱女子战队”参加比赛获省一等奖的通知',
-  },
 
-];
-const columns = [
-  {
-    title: '文件类型',
-    dataIndex: 'file_type',
-    key: 'file_type',
-    width: '10%',
-  }, {
-    title: '发送人',
-    dataIndex: 'sender',
-    key: 'sender',
-    width: '10%',
-  }, {
-    title: '发送时间',
-    dataIndex: 'send_time',
-    key: 'send_time',
-    width: '10%',
-  }, {
-    title: '处理环节',
-    dataIndex: 'disposal_process',
-    key: 'disposal_process',
-    width: '10%',
-  }, {
-    title: '紧急程度',
-    dataIndex: 'emergency_degree',
-    key: 'emergency_degree',
-    width: '10%',
-    render: text => {
-      return text==="急件"?<p style={{"color":"red"}}>!{text}</p>:text;
-    }
-  }, {
-    title: '文件标题',
-    dataIndex: 'file_header',
-    key: 'file_header',
-    width: '40%',
-  }
-];
 class InstitutePost extends React.Component{
   constructor(props){
     super(props);
   }
   render(){
+    const dataSource = [
+      {
+        key: '1',
+        file_type: 'College received',
+        sender: "Kyle",
+        send_time: '2016-04-30',
+        disposal_process: 'To handle',
+        emergency_degree: 'Flat piece',
+        file_header: 'Notice on class 2017,Australia,China and 2 civilized classes received in March',
+      },{
+        key: '2',
+        file_type: 'College received',
+        sender: "Krisy",
+        send_time: '2017-04-22',
+        disposal_process: 'To handle',
+        emergency_degree: 'Emergency',
+        file_header: 'Notice on Kyle\'s won the first prize of the most beautiful men\'s competition',
+      },
+
+    ];
+    const columns = [
+      {
+        title: this.props.example.language["FileType"],
+        dataIndex: 'file_type',
+        key: 'file_type',
+        width: '10%',
+      }, {
+        title: this.props.example.language["Sender"],
+        dataIndex: 'sender',
+        key: 'sender',
+        width: '10%',
+      }, {
+        title: this.props.example.language["Sendtime"],
+        dataIndex: 'send_time',
+        key: 'send_time',
+        width: '10%',
+      }, {
+        title: this.props.example.language["ProcessingLinks"],
+        dataIndex: 'disposal_process',
+        key: 'disposal_process',
+        width: '10%',
+      }, {
+        title: this.props.example.language["EmergencyLevel"],
+        dataIndex: 'emergency_degree',
+        key: 'emergency_degree',
+        width: '10%',
+        render: text => {
+          return text==="Emergency"?<p style={{"color":"red"}}>!{text}</p>:text;
+        }
+      }, {
+        title: this.props.example.language["FileTitle"],
+        dataIndex: 'file_header',
+        key: 'file_header',
+        width: '40%',
+      }
+    ];
     return (
       <Panel
         title={this.props.example.language["InstitutePost"]}
