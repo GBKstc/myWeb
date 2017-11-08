@@ -63,5 +63,5 @@ class StyleEdit extends React.Component{
 }
 
 export default connect(({ example }) => ({
-  example,
+  example
 }))(StyleEdit);

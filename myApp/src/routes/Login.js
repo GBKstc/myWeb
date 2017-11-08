@@ -6,35 +6,36 @@ import {Form,Input,Button,Icon,Col} from 'antd';
 import styles from './Login.less';
 import logo from "../images/logo.jpg";
 import ewm from "../images/ewm.jpg";
+import {Post,URL} from "../system/Post"
 const FormItem = Form.Item;
 
-class LoginContainer extends React.Component {
+class LoginContainerForm extends React.Component {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state={
-      isEem:false,
-      buttonText:"Login"
+      form:null
     };
-    this.goTo=undefined;
   }
 
   componentWillMount() {
 
   }
-  onClick(isBoon){
-    if (isBoon){
-      this.goTo = setTimeout(function () {
-        window.location.href = "http://localhost:8000/#/PersonalWorkbench";
-      },5000);
-    }else{
-      clearTimeout(this.goTo);
-    }
-    this.setState({
-      isEem:isBoon,
-    })
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      console.log(err, values);
+      if(err=null){
+        
+      }
+
+    });
   }
 
   render() {
+    const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
+
     return (
       <div className={styles.loginBg}>
         <div className={styles.loginWrapper}>
@@ -47,32 +48,28 @@ class LoginContainer extends React.Component {
               <div className={styles["center-line"]} ></div>
             </Col>
             <Col span={13}>
-              {
-                this.state.isEem?
-                  <Form  className={styles["login-form"]}>
-                    <img className={styles["ewm"]} src={ewm}/>
-                    <FormItem className={styles["form-item"]}>
-                      <Button style={{backgroundColor:"#404040",color:"#fff",border:"#404040 1px solid"}} type="primary" htmlType="submit" className={styles["login-form-button"]} onClick={this.onClick.bind(this,false)}>
-                        Return account login
-                      </Button>
-                    </FormItem>
-                  </Form>
-                  :
-                  <Form  className={styles["login-form"]}>
-                    <FormItem className={styles["form-item"]}>
-                      <Input addonBefore={<Icon type="user" />} placeholder="User" />
-                    </FormItem>
-                    <FormItem className={styles["form-item"]}>
-                      <Input addonBefore={<Icon type="lock" />} type="password" placeholder="Password" />
-                    </FormItem>
-                    <div onClick={this.onClick.bind(this,true)} className={styles["text-onclick"]}>Toggle scan code login</div>
-                    <FormItem className={styles["form-item"]}>
-                      <Button style={{backgroundColor:"#404040",color:"#fff",border:"#404040 1px solid"}} type="primary" htmlType="submit" className={styles["login-form-button"]} >
-                        <a href="/#/PersonalWorkbench">{this.state.buttonText}</a>
-                      </Button>
-                    </FormItem>
-                  </Form>
-              }
+              <Form  className={styles["login-form"]} onSubmit={this.handleSubmit}>
+                <FormItem className={styles["form-item"]}>
+                  {getFieldDecorator('user', {
+                    rules: [{ required: true, message: 'Please input your username!' }],
+                  })(
+                    <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="User" />
+                  )}
+                </FormItem>
+                <FormItem className={styles["form-item"]}>
+                  {getFieldDecorator('password', {
+                    rules: [{ required: true, message: 'Please input your password!' }],
+                  })(
+                    <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} placeholder="Password" />
+                  )}
+                </FormItem>
+
+                <FormItem className={styles["form-item"]}>
+                  <Button  type="danger"  htmlType="submit" className={styles["login-form-button"]} >
+                    Login
+                  </Button>
+                </FormItem>
+              </Form>
             </Col>
           </div>
         </div>
@@ -81,5 +78,5 @@ class LoginContainer extends React.Component {
   }
 
 }
-
+const LoginContainer = Form.create()(LoginContainerForm);
 export default LoginContainer
