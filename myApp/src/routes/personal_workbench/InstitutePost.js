@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Table } from "antd";
-import Panel from '../../components/Panel';
+import Panel from '../../components/BaseUIWidget/Panel';
 
 class InstitutePost extends React.Component{
   constructor(props){

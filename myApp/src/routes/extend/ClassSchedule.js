@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Table, Row, Col, Button } from "antd";
-import Panel from '../../components/Panel';
+import Panel from '../../components/BaseUIWidget/Panel';
 
 
 class ClassSchedule extends React.Component{

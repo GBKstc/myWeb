@@ -227,8 +227,8 @@ export default {
   namespace: 'example',
 
   state: {
-    language:English,
-    languageType:"English",
+    language:Chinese,
+    languageType:"Chinese",
     styleChange:"light",
     isModal:false,
   },

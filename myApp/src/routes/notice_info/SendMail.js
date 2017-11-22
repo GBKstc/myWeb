@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Table, Row, Col, Button, Input, Form } from "antd";
-import Panel from '../../components/Panel';
+import Panel from '../../components/BaseUIWidget/Panel';
 const FormItem = Form.Item;
 const dataSource = [
   {

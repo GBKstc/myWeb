@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Table, Row, Col, Button, Modal } from "antd";
-import Panel from '../../components/Panel';
+import Panel from '../../components/BaseUIWidget/Panel';
 import styles from "./AddressList.less"
 const dataSource = [
   {

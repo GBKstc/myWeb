@@ -1,6 +1,4 @@
-/**
- * Created by witkiky on 2016/11/30.
- */
+
 /**一些基本的函数**/
 export function getVal(obj, defaultValue = ""){
     return isEmpty(obj) ? defaultValue : obj;

@@ -6,7 +6,7 @@ import { connect } from 'dva';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
-class PersonalWorkbench extends React.Component{
+class personalWorkbench extends React.Component{
   constructor(props){
     super(props);
   }
@@ -60,4 +60,4 @@ class PersonalWorkbench extends React.Component{
 // export default Products;
 export default connect(({ example }) => ({
   example,
-}))(PersonalWorkbench);
+}))(personalWorkbench);

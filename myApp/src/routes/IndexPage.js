@@ -32,6 +32,7 @@ class IndexPage extends React.Component{
             <Menu.Item key="3"><Link href="/#/BussinessOffice">{this.props.example.language["BussinessOffice"]}</Link></Menu.Item>
             <Menu.Item key="4"><Link href="/#/NoticeInfo">{this.props.example.language["NoticeInfo"]}</Link></Menu.Item>
             <Menu.Item key="5"><Link href="/#/Extend">{this.props.example.language["Extend"]}</Link></Menu.Item>
+            <Menu.Item key="6"><Link href="/#/BaseFeature">基本功能</Link></Menu.Item>
           </Menu>
         </Header>
         {this.props.children}
